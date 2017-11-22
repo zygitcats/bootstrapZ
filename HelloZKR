@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Example of Fixed Layout with Bootstrap version 2.0 from w3cschool.cc">
+    <meta name="author" content="">
+
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- 包括所有已编译的插件 -->
+   <!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+<!-- -导航栏功能共用-->
+<!-- navbar-default默认色 navbar-inverse反色的导航栏-->
+<nav class="nav navbar-default navbar-static-top" role="navigation">
+    <!-- 固定到顶部 navbar-fixed-top 固定到底部 navbar-fixed-bottom-->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sc-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">中科软</a>
+        </div>
+        <!-- 为了给导航栏添加响应式特性，您要折叠的内容必须包裹在带有 class .collapse、.navbar-collapse 的 <div> 中。
+        折叠起来的导航栏实际上是一个带有 class .navbar-toggle 及两个 data- 元素的按钮。
+        第一个是 data-toggle，用于告诉 JavaScript 需要对按钮做什么，第二个是 data-target，指示要切换到哪一个元素。
+        三个带有 class .icon-bar 的 <span> 创建所谓的汉堡按钮。这些会切换为 .nav-collapse <div> 中的元素。-->
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+
+            <!-- 向左对齐  navbar-left 向右对齐  navbar-right
+            navbar-nav 默认的导航菜单 nav-tabs标签式导航菜单
+            nav-pills 胶囊式导航菜单 nav-stacked垂直的胶囊式导航菜单
+            nav-justified 两端对齐的导航元素-->
+            <ul class="nav nav-pills navbar-left">
+                <li class="active"><a data-toggle="tab" href="#home">Boot</a></li>
+                <!-- 徽章可以添加 pull-right属性 在 badge后面加  默认的是靠右 靠左也可以-->
+                <li><a data-toggle="tab" href="#mail">mailBox<span class="badge">60</span></a></li>
+                <!-- class="disabled" 导航元素中的禁用链接-->
+                <li class="disabled"><a href="#">UUID</a></li>
+               <!-- <li><a data-toggle="tab" href="#java">Java</a></li>-->
+                <!-- 要想点标签显示内容 需在a标签内加上 data-toggle="tab"
+                href指定要显示内容的对应链接 格式#id名-->
+                <li><a data-toggle="tab" href="#ssh">SSH</a></li>
+                <li class="dropdown">
+                    <!-- 这么写也可以
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Java <span class="caret"></span>
+                      </a>
+                      -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        JavaSE
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Ext<span class="badge">99</span></a></li>
+                        <li><a href="#">EasyUI</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>
+                <!-- tab-content用于存放 需要展示的内容-->
+                <div class="tab-content">
+                    <!-- 配置要展示的多个div 每个div需要有对应的id
+                    每个div的class里需要加上tab-pane fade这个属性
+                    如果是当前页  需要加in active属性-->
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>首页</h3>
+                        <p>我爱中科软!!!</p>
+                    </div>
+                    <!--<div id="java" class="tab-pane fade">
+                        <h3>Java</h3>
+                        <p>我爱Java</p>
+                    </div>-->
+                    <div id="ssh" class="tab-pane fade">
+                        <h3>SSH</h3>
+                        <p>我爱SSH</p>
+                    </div>
+                    <div id="mail" class="tab-pane fade">
+                        <h3>信箱</h3>
+                        <p>寄给未来的你!</p>
+                    </div>
+                </div>
+            </ul>
+            <!-- 向左对齐  navbar-left 向右对齐  navbar-right-->
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">提交</button>
+            </form>
+            <!--<button type="button" class="btn btn-default navbar-btn">
+                导航栏按钮
+            </button>-->
+            <!--<div>
+                <p class="navbar-text">Runoob 用户登录</p>
+            </div>-->
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+            </ul>
+        </div>
+
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">2017</a></li>
+            <li class="active">十一月</li>
+        </ol>
+
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <!-- 标准的按钮 btn btn-default 默认按钮
+        提供额外的视觉效果，标识一组按钮中的原始动作 btn btn-primary 原始按钮
+        信息警告消息的上下文按钮 "btn btn-info 信息按钮
+        表示应谨慎采取的动作 btn btn-warning 警告按钮
+        表示一个危险的或潜在的负面动作 btn btn-danger 危险按钮-->
+    <!-- 表示一个成功的或积极的动作 -->
+    <button type="button" class="btn btn-success">成功按钮</button>
+    <!-- 并不强调是一个按钮，看起来像一个链接，但同时保持按钮的行为 -->
+    <button type="button" class="btn btn-link">链接按钮</button>
+
+
+    <p>
+        <!-- btn btn-primary btn-sm 小的原始按钮
+        btn btn-primary btn-xs 特别小的原始按钮
+        btn btn-primary btn-lg btn-block 块级的原始按钮-->
+        <button type="button" class="btn btn-primary btn-lg">大的原始按钮</button>
+        <button type="button" class="btn btn-default btn-lg">大的按钮</button>
+    </p>
+
+
+
+
+    <div class="jumbotron">
+        <h1>你好中科软！</h1>
+        <p>这是一个超大屏幕（Jumbotron）的实例。</p>
+        <p><a class="btn btn-primary btn-lg" role="button">
+            学习更多</a>
+        </p>
+    </div>
+
+    <div class="jumbotron">
+    <h1>你好BootStrap！</h1>
+    <p>Bootstrap，来自 Twitter，是目前很受欢迎的前端框架。
+        Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。
+        它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架。
+        Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。Bootstrap一经推出后颇受欢迎，
+        一直是GitHub上的热门开源项目，包括NASA的MSNBC（微软全国广播公司）的Breaking News都使用了该项目。
+        国内一些移动开发者较为熟悉的框架，如WeX5前端开源框架等，也是基于Bootstrap源码进行性能优化而来。</p>
+    <p><a class="btn btn-primary btn-lg" role="button">
+        学习更多</a>
+    </p>
+</div>
+
+    <div class="row">
+        <div class="col-sm-3 col-md-6 col-lg-8"
+             style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444,
+         inset -1px 1px 1px #444;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo.
+        </p>
+    </div>
+        <!-- 响应式的列重置-->
+        <div class="clearfix visible-sm"></div>
+
+        <div class="col-sm-9 col-md-6 col-lg-4"
+             style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444,
+         inset -1px 1px 1px #444;">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium.
+            </p>
+
+            <p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam eius modi
+                tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem.
+            </p>
+        </div>
+    </div>
+
+    <!-- 默认的面板样式panel-default
+   panel-primary 主题样式
+   panel-success 表示成功的样式
+   panel-info 表示信息的样式
+   panel-warning 表示警告的样式
+   panel-danger 表示危险的样式-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">面板标题</h3>
+        </div>
+        <div class="panel-body">
+            面板内容
+        </div>
+        <!-- 假设有个 <div> 包含 .panel-body，我们可以向表格的顶部添加额外的边框用来分隔。
+        如果没有包含 .panel-body 的 <div>，则组件会无中断地从面板头部移动到表格。-->
+        <table class="table">
+            <th>产品</th><th>价格 </th>
+            <tr><td>产品 A</td><td>200</td></tr>
+            <tr><td>产品 B</td><td>400</td></tr>
+        </table>
+
+        <ul class="list-group">
+            <li class="list-group-item">泡泡</li>
+            <li class="list-group-item">免费 Window 空间托管</li>
+            <li class="list-group-item">图像的数量</li>
+            <li class="list-group-item">24*7 支持</li>
+            <li class="list-group-item">每年更新成本</li>
+        </ul>
+        <div class="panel-footer">面板脚注</div>
+    </div>
+
+    <div class="row" >
+        <div class="col-xs-6 col-md-offset-3"
+             style="background-color: #dedef8;box-shadow:
+        inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="background-color: #dedef8;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <h4>第一列</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+        </div>
+        <div class="col-md-9" style="background-color: #dedef8;box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            <h4>第二列 - 分为四个盒子</h4>
+            <div class="row">
+                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p>
+                        Consectetur art party Tonx culpa semiotics. Pinterest
+                        assumenda minim organic quis.
+                    </p>
+                </div>
+                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p>
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p>
+                        quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                <div class="col-md-6" style="background-color: #B18904; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <p>
+            排序后
+        </p>
+        <div class="col-md-4 col-md-push-8" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            我在左边
+        </div>
+        <div class="col-md-8 col-md-pull-4" style="background-color: #dedef8; box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+            我在右边
+        </div>
+    </div>
+
+    <!-- progress-striped添加这个属性显示的是带条纹的进度条 加个active就是动画效果-->
+    <div class="progress progress-striped active">
+        <!-- progress-bar-success 完成(成功)
+            progress-bar-info 30% 完成（信息）
+           progress-bar-warning 20% 完成（警告）
+           progress-bar-danger 完成（危险）-->
+        <div class="progress-bar progress-bar-success" role="progressbar"
+             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+             style="width: 40%;">
+            <span class="sr-only">40% 完成</span>
+        </div>
+        <!-- 堆叠进度条-->
+        <div class="progress-bar progress-bar-info" role="progressbar"
+             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+             style="width: 60%;">
+            <span class="sr-only">60% 完成（信息）</span>
+        </div>
+    </div>
+
+    <!-- 默认的分页用pagination 大图标的分页pagination-lg 小图标的分页pagination-sm-->
+    <ul class="pagination pagination-lg">
+        <li><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li class="disabled"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+    <ul class="pager">
+        <!-- 居中就是什么class属性都不加，只有一个pager-->
+        <!-- 两端对齐  previous next
+        disabled 禁用-->
+        <li class="previous disabled"><a href="#">&larr; Older</a></li>
+        <li class="next"><a href="#">Newer &rarr;</a></li>
+    </ul>
+</div>
+
+
+
+
+</body>
+</html>
